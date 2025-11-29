@@ -1,0 +1,104 @@
+
+
+AllCops:
+  SuggestExtensions: false
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'lib/**/*'
+    - 'tmp/**/*'
+
+# Checks for two or more consecutive blank lines.
+Layout/EmptyLines:
+  Exclude:
+    - 'bin/setup'
+
+Metrics/BlockLength:
+  Max: 200
+  Exclude: 
+    - 'config/**/*'
+    - 'spec/**/*'
+
+# Checks if the length of a method exceeds the 30 lines..
+Metrics/MethodLength:
+  Max: 35
+
+Layout/LineLength:
+  Max: 200
+
+Metrics/ClassLength:
+  Enabled: false
+
+# Don't use `and` and `or`, use `&& and `||` instead.
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+# Braces around single line blocks and # do..end around multi-line blocks.
+Style/BlockDelimiters:
+  EnforcedStyle: line_count_based
+
+# 1_000_000 instead of 1000000
+Style/NumericLiterals:
+  Exclude:
+    - 'db/schema.rb'
+
+# Checks for simple usages of parallel assignment
+Style/ParallelAssignment:
+  Exclude:
+    - 'app/queries/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Style/RedundantConstantBase:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Lint/EmptyBlock:
+  Exclude: 
+     - 'spec/**/*'
+Style/NumericLiteralPrefix:
+  Enabled: false
+Style/SuperArguments:
+  Enabled: false
+Lint/SafeNavigationChain:
+  Enabled: false
+Style/SafeNavigationChainLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Max: 35
+Metrics/PerceivedComplexity:
+  Max: 35
+Metrics/AbcSize:
+  Max: 70
+Style/FormatStringToken:
+  Enabled: false
+Style/FormatString:
+  Enabled: false
+Style/StructInheritance:
+  Enabled: false
+Metrics/ParameterLists:
+  Max: 10
+Style/HashConversion:
+  Enabled: false
+Lint/AssignmentInCondition:
+  Enabled: false
+Style/MultilineBlockChain:
+  Enabled: false
+Security/Eval:
+  Enabled: false
+Style/DocumentDynamicEvalDefinition:
+  Enabled: false
+Style/EvalWithLocation:
+  Enabled: false

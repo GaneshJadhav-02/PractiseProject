@@ -1,0 +1,10 @@
+
+
+default: &default
+  verbose: false
+  pidfile: ./tmp/pids/sidekiq.pid
+  max_retries: 3
+development:
+  <<: *default
+production:
+  <<: *default

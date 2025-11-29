@@ -1,0 +1,12 @@
+
+
+en:
+  doc:
+    dropdowns:
+      default: Dropdown Values
+      dashboard:
+        restaurant_groups_list: 'List of permitted restaurant groups'
+        active_employees_list: 'List of active employee of specific restaurants'
+        cuisines_list: 'List of cuisines'
+    auth:
+      token: Auth token from admins#sign_in

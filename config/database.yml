@@ -1,0 +1,26 @@
+
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host:     <%= ENV['DATABASE_HOST'] %>
+  port:     <%= ENV.fetch('DATABASE_PORT') { 5432 } %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  pool:     <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+
+development:
+  <<: *default
+  database: <%= ENV.fetch('DATABASE_NAME') { 'tablesteaks-app_development' } %>
+  sslmode:  disable
+
+
+test:
+  <<: *default
+  database: <%= "#{ENV.fetch('DATABASE_TEST') { 'tablesteaks-app_test' }}#{ENV['TEST_ENV_NUMBER']}" %>
+  sslmode:  disable
+
+production:
+  <<: *default
+  database: <%= ENV.fetch('DATABASE_NAME') { Rails.application.credentials.database&.name } %>
+  sslmode:  require

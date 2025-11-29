@@ -1,0 +1,23 @@
+
+
+en:
+  api:
+    errors:
+      no_data: NO DATA
+      empty_email: Please provide an email address
+      invalid_email: Email Address invalid. Try again
+      confirmed_user: Account is already confirmed
+      param_is_required: "%{attribute} is required"
+      param_not_permitted: 'Parameter not permitted'
+      not_found: Not found
+      wrong_access: You don't have permissions to process that action
+      unauthorized: Unauthorized
+      forbidden: Forbidden (not enough rights)
+      bad_request: Bad request
+      unconfirmed_user: User must be confirmed
+      param_validation: Start value should always be less than end value
+      object_not_found: "%{attribute} with id '%{id}' can't be found"
+    params:
+      order: Hash order
+      keyword: Order Keyword
+      direction: Order Direction

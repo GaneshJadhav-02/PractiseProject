@@ -1,0 +1,41 @@
+
+
+en:
+  active_interaction:
+    errors:
+      messages:
+        blank: "%{attribute} can't be blank"
+        not_found: "%{attribute} can't be found"
+        transaction_not_allowed: 'Transaction is not allowed'
+      models:
+        v1/applicants/sign_in:
+          attributes:
+            base:
+              unconfirmed_email: Account is not yet confirmed, please confirm it
+              deactivated_account: This account is deactivated, please contact the admin.
+            email:
+              invalid: Incorrect Email Address, please try again
+            password:
+              invalid: Incorrect password, please try again
+        v1/admins/sign_in:
+          attributes:
+            base:
+              account_not_active: Your account is suspended, please contact the admin
+              invalid_requester_type: Invalid requester type
+              wrong_access: You don’t have permission to access this application
+            username:
+              invalid_username: Username is incorrect. Please try again.
+              invalid_email: Email address is incorrect. Please try again.
+            password:
+              invalid: Password is incorrect. Please try again.
+        v1/admins/reset_password_mail:
+          attributes:
+            email:
+              invalid: Email address is incorrect, please try a new one
+            username:
+              invalid: Username is incorrect, please try a new one
+        v1/themes/delete:
+          attributes:
+            theme:
+              action_denied: Theme can't be deleted
+        
