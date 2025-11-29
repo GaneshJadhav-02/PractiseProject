@@ -1,8 +1,3 @@
-/**
- * Copyright © 2025 OwnersTable Inc. All rights reserved.
- * This source code is proprietary and confidential.
- * Unauthorized copying or distribution is strictly prohibited.
- */
 
 // Import and register all your controllers from the importmap under controllers/*
 

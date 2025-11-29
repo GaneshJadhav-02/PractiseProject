@@ -1,7 +1,3 @@
-# Copyright © 2025 OwnersTable Inc. All rights reserved.
-# This source code is proprietary and confidential.
-# Unauthorized copying or distribution is strictly prohibited.
-
 class ApiResponder < ::ActionController::Responder
   def api_behavior
     raise MissingRenderer.new(format) unless has_renderer?
