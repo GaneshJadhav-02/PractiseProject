@@ -67,7 +67,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rubocop', require: false
   gem 'rubocop-rails'
-  # gem 'rspec-rails', '~> 6.1.0'
+  gem 'rspec-rails', '~> 6.1.0'
   # A library for setting up Ruby objects as test data.
   gem 'factory_bot_rails'
   # A library for generating fake data such as names, addresses, and phone numbers.
@@ -96,5 +96,6 @@ group :test do
   gem 'selenium-webdriver'
   # Strategies for cleaning databases in Ruby. Can be used to ensure a clean state for testing.
   gem 'database_cleaner-active_record'
+  gem 'webmock'
 end
 gem 'jsonapi-serializer'
