@@ -11,13 +11,13 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV.fetch('DATABASE_NAME') { 'tablesteaks-app_development' } %>
+  database: <%= ENV.fetch('DATABASE_NAME') { 'app_development' } %>
   sslmode:  disable
 
 
 test:
   <<: *default
-  database: <%= "#{ENV.fetch('DATABASE_TEST') { 'tablesteaks-app_test' }}#{ENV['TEST_ENV_NUMBER']}" %>
+  database: <%= "#{ENV.fetch('DATABASE_TEST') { 'app_test' }}#{ENV['TEST_ENV_NUMBER']}" %>
   sslmode:  disable
 
 production:

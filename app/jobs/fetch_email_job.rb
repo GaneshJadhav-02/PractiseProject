@@ -4,6 +4,6 @@ class FetchEmailJob < ApplicationJob
   queue_as :default
 
   def perform
-    Fetch::FetchEmail.new.fetch_report_link
+    Order.create
   end
 end
