@@ -67,6 +67,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rubocop', require: false
   gem 'rubocop-rails'
+  # gem 'rspec-rails', '~> 6.1.0'
   # A library for setting up Ruby objects as test data.
   gem 'factory_bot_rails'
   # A library for generating fake data such as names, addresses, and phone numbers.

@@ -5,14 +5,14 @@ module Api
     include RoundDecimalValues
 
     attributes :id,
-                :discount_code,
-                :check_in,
-                :total_discount,
-                :order,
-                :visiting_restaurant,
-                :network_guest,
-                :visitor_restaurant,
-                :time_zone_abbr
+               :discount_code,
+               :check_in,
+               :total_discount,
+               :order,
+               :visiting_restaurant,
+               :network_guest,
+               :visitor_restaurant,
+               :time_zone_abbr
 
     def order
       data = object&.order

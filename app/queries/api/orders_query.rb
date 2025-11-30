@@ -42,7 +42,7 @@ module Api
       scope = search_by_range(scope, date_range, time_range)
       if network_guest_name.present?
         scope = scope.joins(:network_guest)
-                      .where("CONCAT(network_guests.first_name, ' ', network_guests.last_name) ILIKE ?", "%#{network_guest_name}%")
+                     .where("CONCAT(network_guests.first_name, ' ', network_guests.last_name) ILIKE ?", "%#{network_guest_name}%")
       end
 
       scope&.order('created_at asc')
@@ -53,25 +53,25 @@ module Api
 
     def search_by_date_range(scope, range)
       from = if range[:from].blank?
-                1000.year.ago.to_date.beginning_of_day + 6.hours
-              else
-                range[:from].to_date.beginning_of_day + 6.hours
-              end
+               1000.year.ago.to_date.beginning_of_day + 6.hours
+             else
+               range[:from].to_date.beginning_of_day + 6.hours
+             end
       to = if range[:to].blank?
-              DateTime::Infinity.new
-            else
-              range[:to].to_date.end_of_day + 6.hours
-            end
+             DateTime::Infinity.new
+           else
+             range[:to].to_date.end_of_day + 6.hours
+           end
       scope.where(opened: from..to)
     end
 
     def search_by_range_time(scope, range)
       from = (Time.strptime(range[:from], '%H:%M') + 6.hours).strftime('%H:%M')
       to = if range[:to].blank?
-              (Time.current + 6.hours).strftime('%H:%M')
-            else
-              (Time.strptime(range[:to], '%H:%M') + 6.hours).strftime('%H:%M')
-            end
+             (Time.current + 6.hours).strftime('%H:%M')
+           else
+             (Time.strptime(range[:to], '%H:%M') + 6.hours).strftime('%H:%M')
+           end
       scope.where('opened::time BETWEEN ? AND ?', from, to)
     end
 
